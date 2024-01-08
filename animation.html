@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation</title>
+  </head>
+  <body>
+    <canvas
+      id="canva"
+      width="400"
+      height="400"
+      style="border: 1px solid #000"
+    ></canvas>
+
+    <script>
+      const canvas = document.getElementById("canva");
+      const ctx = canvas.getContext("2d");
+
+      let x1 = 0;
+      let y1 = 0;
+      let x2 = 0;
+      let y2 = 0;
+
+      function drawLine() {
+
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+        ctx.stroke();
+      }
+
+      function animateLine() {
+        x2 += 1;
+        y2 += 1;
+
+        drawLine();
+
+        if (x2 < canvas.width && y2 < canvas.height) {
+          requestAnimationFrame(animateLine);
+        } else {
+          alert("Animation ended");
+        }
+      }
+
+      animateLine();
+    </script>
+  </body>
+</html>

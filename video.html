@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Videos</title>
+  </head>
+  <body>
+    <video
+      src="videos/porche1.mp4"
+      width="400"
+      height="400"
+      class="vid"
+    ></video>
+    <div>
+      <progress class="pro" value="0"></progress>
+      <span id="current-time">0:00</span>
+      /
+      <span id="duration">0:00</span>
+    </div>
+    <button class="btn-play">Play</button>
+    <button class="btn-pause">Pause</button>
+    <button class="prev"><<</button>
+    <button class="to-first"><</button>
+    <button class="to-end">></button>
+    <button class="next">>></button>
+    <input type="range" min="0" max="1" step="0.1" class="volume-range" />
+    <button class="btn-mute">mute</button>
+    <button class="btn-fullscreen">Fullscreen</button>
+    <div>
+      <span>Speed</span>
+      <input type="range" class="range" min="0.1" max="2" step="0.1" />
+    </div>
+
+    <script src="js/video.js"></script>
+  </body>
+</html>
